@@ -1,0 +1,22 @@
+
+.bg_img_log{
+    background: url("../../assets/background.jpg");
+    /* background-color: rgba(245, 245, 245, 0.4); */
+    /* height: 100pxs; */
+    /* filter: blur(2px);
+    -webkit-filter: blur(1px); */
+
+}
+.form-control{
+    background-color:solid blue;
+}
+.doclogform{
+    display: flex;
+    justify-content: center;
+    /* height: 120px; */
+    /* align-items: center; */
+    /* flex-direction: row */
+}
+.card-log{
+    margin-top: 15%;
+}

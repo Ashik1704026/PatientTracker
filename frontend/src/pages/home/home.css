@@ -1,0 +1,43 @@
+.bgimage {
+  background: url("../../assets/background.jpg");
+  background-size: cover;
+
+
+  height: 350px;
+  background-position: center;
+  position: relative;
+
+  object-fit: cover;
+  background-repeat: no-repeat;
+}
+.cardhome {
+  background-color: rgb(122, 122, 126);
+  margin-top: 10px;
+  padding: 1em .5em 2.5em;
+  border-radius: 10%;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(6, 6, 6, 0.2);
+}
+.text {
+  text-align: center;
+  margin-top: 10%;
+  font-style: italic;
+  font-family: sans-serif;
+  /* text-shadow: 50px; */
+  text-shadow: 2px 2px #28926b;
+}
+.row{
+  margin-block-start: 30%;
+}
+imgcard{
+  width: 2%;
+  height: 10%;
+  /* border-radius: 100%; */
+  /* margin: 0 auto; */
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

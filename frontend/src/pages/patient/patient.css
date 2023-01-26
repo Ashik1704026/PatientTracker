@@ -1,0 +1,29 @@
+.pcard2{
+    border-radius: 10%;
+    /* text-align: center; */
+    box-shadow: 0 5px 10px rgba(6, 6, 6, 0.7);
+    /* background-color: #00C4CC; */
+}
+.pcard1{
+background-position: center;
+position: relative;
+
+object-fit: cover;
+background-repeat: no-repeat;
+}
+.dropdown-menu li {
+    position: relative;
+    }
+    .dropdown-menu .dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -7px;
+    }
+    .dropdown-menu .dropdown-submenu-left {
+    right: 100%;
+    left: auto;
+    }
+    .dropdown-menu > li:hover > .dropdown-submenu {
+    display: block;
+    }
