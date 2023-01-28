@@ -10,6 +10,7 @@ import Imagemodal from "./pages/Imagemodal";
 import Demo from "./pages/Demo";
 import { useState } from "react";
 import  Alert  from "./pages/Alert";
+import AddRecord from "./pages/addRecord/AddRecord";
 
 export default function Routes() {
   const [alert,setAlert]=useState(null);
@@ -31,6 +32,7 @@ export default function Routes() {
       <Route path="/patient/:patientId" element={<Patient/>}/>
       <Route path="/demo" element={<Demo/>}/>
       <Route path="/imagemodal" element={<Imagemodal/>}/>
+      <Route path="/addRecord" element={<AddRecord/>}/>
 
         {/* <Route index element={<Products />} />
         <Route path=":productId" element={<Product />} /> */}
