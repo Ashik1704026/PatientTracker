@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
+const cors = require('cors');
 const connectDB = require('./config/connectDB');
 const doctorAuthRouter = require('./routes/auth/doctorAuthRouter');
 const patientAuthRouter = require('./routes/auth/patientAuthRouter');
@@ -20,6 +21,9 @@ mongoose.set('strictQuery', true);
 app.use(express.json());
 app.use(cookieParser());
 app.use(morgan("dev"));
+app.use(cors({
+    origin: '*'
+}));
 
 
 

@@ -31,6 +31,7 @@ const refereceCounterModel = mongoose.model("ReferenceCounter", refereceCounterS
 
 exports.getPatientHistory = async(req, res, next) =>{
     const {patientId} = req.query;
+    let flag = false;
     try {
                     // finding reference id with corresponding history
 
@@ -93,16 +94,18 @@ exports.getPatientHistory = async(req, res, next) =>{
 
         const patientInfo = await Patient.findOne({patientId}, {name : 1, _id : 0});
 
-
+        flag = true;
         res.status(200).json({
             message: "Successfully get symptoms",
             patientInfo,
-            history
+            history,
+            flag
         });
     } catch (error) {
         res.status(400).json({
             message: "Something went wrong",
             error,
+            flag
         })
     }
 };
@@ -111,8 +114,8 @@ exports.getPatientHistory = async(req, res, next) =>{
 
 
 exports.createPatientHistory = async(req, res) => {
-    const sToken = req.cookies.jwt;
-    const decode = jwt.verify(sToken, process.env.PRIVATE_KEY);
+    // const sToken = req.cookies.jwt;
+    // const decode = jwt.verify(sToken, process.env.PRIVATE_KEY);
 
     try {
         let counterModel;
@@ -129,8 +132,10 @@ exports.createPatientHistory = async(req, res) => {
         }
 
         const referenceId = counterModel.seq + 100000;
-        const doctorId = decode._id;
+        // const doctorId = decode._id;
+        const doctorId = "63c145d00560614423355dce"
         const {patientId, symptoms, medicines, vitalInfo, diagnosis} = req.body;
+        // console.log(req.body);
 
         const history = await Histories.create({
             doctorId, patientId, referenceId, symptoms, medicines,vitalInfo, diagnosis

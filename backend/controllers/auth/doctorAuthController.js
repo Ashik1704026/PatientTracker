@@ -31,6 +31,7 @@ exports.signup = async(req, res, next) => {
 
 
 exports.login = async (req, res, next) =>{
+    let success = false;
     // res.send("hello, i am from log in");
 
     const {email, password} = req.body;
@@ -40,6 +41,7 @@ exports.login = async (req, res, next) =>{
         if(!user){
             return res.status(401).json({
                 message : "Wrong credential",
+                success
             });
         }
 
@@ -48,6 +50,7 @@ exports.login = async (req, res, next) =>{
         if(!validated){
             return res.status(400).json({
                 message : "Password does not match",
+                success
             });
         }
         
@@ -59,11 +62,13 @@ exports.login = async (req, res, next) =>{
             // httpOnly : true,
         });
         // cookie end
+        success = true;
 
         res.status(200).json({
             message : "login successful",
             token,
             user,
+            success
         })
 
     } catch (error) {
