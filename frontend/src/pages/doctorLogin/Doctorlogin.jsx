@@ -5,8 +5,21 @@ import Topbar from "../topbar/Topbar";
 import Footer from "../footer/Footer";
 import logimg from "../../assets/book.jpg";
 import "./doctorLogin.css";
+// import { Alert } from "bootstrap";
+import Alert from "../Alert";
+// import { useState } from "react";
 
-export default function Doctorlogin() {
+export default function Doctorlogin(props) {
+  const [alert, setAlert] = useState(null);
+  const showAlert = (message, type) => {
+    setAlert({
+      message: message,
+      type: type,
+    });
+    setTimeout(() => {
+      setAlert(null);
+    }, 1500);
+  };
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   //for redirect
   let history = useNavigate();
@@ -31,7 +44,8 @@ export default function Doctorlogin() {
     if (json.success) {
       localStorage.setItem("token", json.token);
       history("/doctor", { state: { data: json } });
-      // document.location.reload();
+    } else {
+      // showAlert("LogIn sccessfully!!","success")
     }
   };
 
@@ -42,6 +56,7 @@ export default function Doctorlogin() {
   return (
     <div>
       <Topbar />
+      <Alert alert={alert} />
       <body className="bg_img_log opacity-75">
         <div className="container doclogform">
           <div
@@ -67,9 +82,11 @@ export default function Doctorlogin() {
                 </div>
                 <div className="col-md-6  col-lg-6 ">
                   <div className="container mt-5">
-                  <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit}>
                       <div className="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
+                        <label for="validationDefaultUsername">
+                          Email address
+                        </label>
                         <input
                           value={credentials.email}
                           onChange={onChange}
@@ -78,7 +95,11 @@ export default function Doctorlogin() {
                           className="form-control"
                           id="email"
                           aria-describedby="emailHelp"
+                          required
                         />
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">
+                          Please fill out this field.</div>
                       </div>
                       <div className="form-group">
                         <label for="exampleInputPassword1">Password</label>
@@ -89,10 +110,17 @@ export default function Doctorlogin() {
                           type="password"
                           className="form-control"
                           id="password"
+                          required
                         />
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">
+                          Please fill out this field.</div>
                       </div>
 
-                      <button type="submit" className="btn btn-primary btn-block">
+                      <button
+                        type="submit"
+                        className="btn btn-primary btn-block"
+                      >
                         Submit
                       </button>
                     </form>

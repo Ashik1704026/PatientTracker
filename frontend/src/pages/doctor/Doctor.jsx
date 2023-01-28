@@ -9,7 +9,7 @@ import docimg from "../../assets/doctor_avatar.jpg"
 export default function Doctor() {
   // const a=useContext(doctorContext)
   const location = useLocation();
-  // console.log(location.state.data.user.name)
+  console.log(location.state.data.user.name)
   const [patientID, setPatientID] = useState({ patient_id: "", payload: null });
   const [data, setdata] = useState({});
   const [jsonData, setjsonData] = useState({ json: "" });
@@ -20,19 +20,21 @@ export default function Doctor() {
   };
 
   const handleClick = async (event) => {
-    // const response = await fetch(`http://localhost:5001/api/history/?patientId=${patientID.patient_id}`, {
-    //   method: 'GET',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     "auth-token": localStorage.getItem('token')
-    //   }
-    // });
-    // const json = await response.json()
+    const response = await fetch(`http://localhost:5001/api/history/?patientId=${patientID.patient_id}`, {
+       method: 'GET',
+       headers: {
+         'Content-Type': 'application/json',
+         "auth-token": localStorage.getItem('token')
+       }
+     });
+    const json = await response.json()
+    // console.log(json)
     // setPatientID({...patientID,payload:json},console.log("saved"))
     // history.push(`/patient/${patientID.patient_id}`);
-    navigate(`/patient/${patientID.patient_id}`);
-    //document.location.reload();
-    // setdata(response.data)
+    if(json.flag){
+      navigate(`/patient/${patientID.patient_id}`);
+    }
+   
   };
 
   return (

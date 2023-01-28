@@ -2,18 +2,18 @@ import React from "react";
 import pic from "../assets/book.jpg";
 
 export default function Imagemodal() {
+  // const d=props.val;
+
+  // console.log(d)
   return (
     <div>
-      <button
-        type="button"
-        class="btn btn-primary"
-        data-toggle="modal"
-        data-target="#exampleModal"
-      >
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
         Click to view modal
-      </button>
+      </button> 
       {/* <!--Bootstrap modal --> */}
       <div
+      data-target="#exampleModal"
+      data-toggle="modal"
         class="modal fade"
         id="exampleModal"
         tabindex="-1"
@@ -23,7 +23,7 @@ export default function Imagemodal() {
       >
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            {/* <!-- Modal heading --> */}
+            {/* <!-- Modal heading -->
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">
                 aGuideHub
@@ -37,9 +37,13 @@ export default function Imagemodal() {
                 <span aria-hidden="true">×</span>
               </button>
             </div>
+            <h1>Test inside modal</h1>
             {/* <!-- Modal body with image --> */}
             <div class="modal-body">
-              <img src={pic} alt="sdjhskfjds" />
+              {/* <img src={pic} alt="sdjhskfjds" /> */}
+              {/* <img src={require(`../../src/assets/${d}`)} /> */}
+              <img src={require(`../../src/assets/avatar.png`)} />
+
             </div>
           </div>
         </div>
