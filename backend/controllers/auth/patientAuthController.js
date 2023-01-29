@@ -53,12 +53,14 @@ exports.login = async (req, res, next) =>{
                 message : "Password does not match",
             });
         }
+        const patientId = user._id;
         
         const token = jwt.sign({email, _id: user._id}, process.env.PRIVATE_KEY, {expiresIn: "2h"});
 
         res.status(200).json({
             message : "login successful",
             token,
+            patientId
         })
 
     } catch (error) {
