@@ -1,21 +1,17 @@
 import React, { useEffect, useRef } from "react";
 import Footer from "../footer/Footer";
 import Topbar from "../topbar/Topbar";
-import { useNavigate } from "react-router-dom";
-import Demo from "../Demo";
 import { useState } from "react";
 import { useSearchParams, useParams } from "react-router-dom";
 import "./patient.css";
 import pimg from "../../assets/patient_avatar.png";
-import Imagemodal from "../Imagemodal";
 import Modal_demo from "./Modal_demo";
 
 
 export default function Patient() {
-  let history = useNavigate();
   const ref = useRef(null);
   const [patientPayload, setPayload] = useState();
-  const [xz, setxz] = useState();
+ 
 
   const toggleModal = () => {
     ref.current.click();
@@ -61,16 +57,9 @@ export default function Patient() {
               >
                 <div className="row">
                   <div className="col-md-2 text-center">
-                    <button
-                      type="button"
-                      onClick={toggleModal}
-                      className="btn btn-primary"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                      style={{ marginTop: "50%" }}
-                    >
-                      <i className="fa-solid fa-user-plus"></i> New Record
-                    </button>
+                    <a style={{ marginTop: "50%" }}  href="/addrecord" >
+                      <i className="fa-solid fa-user-plus" ></i> New Record
+                    </a>
                   </div>
                   <div className="col-md-4 mt-5">
                     <h5 className="mx-5 my-3">

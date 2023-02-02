@@ -47,7 +47,7 @@ export default function Home() {
                   <img src={patient}class="imgcard card-img-top img-fluid rounded-circle" alt="asja"/>
                 </div>
                 <div className="card-footer">
-                <p>Patient</p>
+                <a href="/patient">Patient</a>
                 </div>
               </div>
             </div>

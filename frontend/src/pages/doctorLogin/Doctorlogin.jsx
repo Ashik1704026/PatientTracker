@@ -9,6 +9,9 @@ import "./doctorLogin.css";
 import Alert from "../Alert";
 // import { useState } from "react";
 
+const PORT = process.env.PORT || 4000;
+console.log(PORT);
+
 export default function Doctorlogin(props) {
   const [alert, setAlert] = useState(null);
   const showAlert = (message, type) => {
@@ -27,7 +30,7 @@ export default function Doctorlogin(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await fetch(
-      "http://localhost:5001/api/auth/doctor/login",
+      `http://localhost:5002/api/auth/doctor/login`,
       {
         method: "POST",
         headers: {

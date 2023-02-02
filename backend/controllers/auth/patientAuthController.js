@@ -35,7 +35,7 @@ exports.signup = async(req, res, next) => {
 
 exports.login = async (req, res, next) =>{
     // res.send("hello, i am from log in");
-
+    success=false;
     const {email, password} = req.body;
     try {
         const user = await Patient.findOne({email});
@@ -43,6 +43,7 @@ exports.login = async (req, res, next) =>{
         if(!user){
             return res.status(401).json({
                 message : "Wrong credential",
+                success
             });
         }
 
@@ -51,21 +52,24 @@ exports.login = async (req, res, next) =>{
         if(!validated){
             return res.status(400).json({
                 message : "Password does not match",
+                success
             });
         }
         const patientId = user._id;
         
         const token = jwt.sign({email, _id: user._id}, process.env.PRIVATE_KEY, {expiresIn: "2h"});
-
+        success=true
         res.status(200).json({
             message : "login successful",
             token,
-            patientId
+            patientId,
+            success
         })
 
     } catch (error) {
         res.status(404).json({
             message : "Not found",
+            success
         });
     }
 }
