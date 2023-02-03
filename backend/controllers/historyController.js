@@ -92,7 +92,7 @@ exports.getPatientHistory = async(req, res, next) =>{
             }
         ]);
 
-        const patientInfo = await Patient.findOne({patientId}, {name : 1, _id : 0});
+        const patientInfo = await Patient.findOne({patientId});
 
         flag = true;
         res.status(200).json({
