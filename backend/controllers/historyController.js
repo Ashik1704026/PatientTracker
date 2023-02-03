@@ -132,16 +132,16 @@ exports.createPatientHistory = async(req, res) => {
         }
 
         const referenceId = counterModel.seq + 100000;
-        // const doctorId = decode._id;
-        const doctorId = "63c145d00560614423355dce"
-        const {patientId, symptoms, medicines, vitalInfo, diagnosis} = req.body;
-        // console.log(req.body);
+        const {doctorToken, patientId, symptoms, medicines, vitalInfo, diagnosis} = req.body;
+
+        const decode = jwt.verify(doctorToken, process.env.PRIVATE_KEY);
+        const doctorId = decode._id;
 
         const history = await Histories.create({
             doctorId, patientId, referenceId, symptoms, medicines,vitalInfo, diagnosis
         });
 
-
+        // console.log(history)
         res.status(200).json({
             message: "Successfully create history",
             history
