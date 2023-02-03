@@ -29,7 +29,7 @@ export default function Patient() {
     );
     const json = await response.json();
     setPayload(json);
-    // console.log(json)
+    console.log(json)
   };
 
   useEffect(() => {
