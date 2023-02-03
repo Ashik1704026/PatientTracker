@@ -32,7 +32,7 @@ export default function Routes() {
 
       <Route path="/demo" element={<Demo/>}/>
       <Route path="/imagemodal" element={<Imagemodal/>}/>
-      <Route path="/addrecord" element={<AddRecord/>}/>
+      <Route path="/addrecord/:patientId" element={<AddRecord/>}/>
 
         {/* <Route index element={<Products />} />
         <Route path=":productId" element={<Product />} /> */}

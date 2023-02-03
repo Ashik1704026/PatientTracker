@@ -2,26 +2,23 @@ import React, { useEffect, useRef } from "react";
 import Footer from "../footer/Footer";
 import Topbar from "../topbar/Topbar";
 import { useState } from "react";
-import { useSearchParams, useParams } from "react-router-dom";
+import { useSearchParams, useParams, Link } from "react-router-dom";
 import "./patient.css";
 import pimg from "../../assets/patient_avatar.png";
 import Modal_demo from "./Modal_demo";
+import { useNavigate} from "react-router-dom";
+// import AddRecord from "./pages/addRecord/AddRecord";
 
 
 export default function Patient() {
   const ref = useRef(null);
   const [patientPayload, setPayload] = useState();
- 
-
-  const toggleModal = () => {
-    ref.current.click();
-  };
-  //id comes from doctor page
+  const navigate = useNavigate();
   const { patientId } = useParams();
 
   const apiCall = async () => {
     const response = await fetch(
-      `http://localhost:5001/api/history/?patientId=${patientId}`,
+      `http://localhost:5002/api/history/?patientId=${patientId}`,
       {
         method: "GET",
         headers: {
@@ -39,8 +36,6 @@ export default function Patient() {
     apiCall();
   }, [patientId]);
 
-  // console.log(patientPayload);
-
   return (
     <div>
       <>
@@ -57,9 +52,8 @@ export default function Patient() {
               >
                 <div className="row">
                   <div className="col-md-2 text-center">
-                    <a style={{ marginTop: "50%" }}  href="/addrecord" >
-                      <i className="fa-solid fa-user-plus" ></i> New Record
-                    </a>
+                    <Link to={`/addrecord/${patientId}`}>
+                      <button style={{ marginTop: "50%" }}><i className="fa-solid fa-user-plus" ></i> New Record </button></Link>
                   </div>
                   <div className="col-md-4 mt-5">
                     <h5 className="mx-5 my-3">

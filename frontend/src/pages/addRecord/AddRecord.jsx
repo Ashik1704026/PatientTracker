@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { MuiChipsInput } from 'mui-chips-input'
 import { Container, Grid } from '@mui/material';
+import { useParams } from "react-router-dom";
 
 export default function MultilineTextFields() {
     const [symtomsChips, setsymtomsChips] = React.useState([]);
@@ -62,11 +63,12 @@ export default function MultilineTextFields() {
     }
     console.log(diagnosisChips);
 
+    const { patientId } = useParams();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         let data = { symtomsChips, val, diagnosisChips };
-        // console.log(data);
 
         let mappedDiagnosisChips = diagnosisChips.map((data) => {
             return {
@@ -75,9 +77,11 @@ export default function MultilineTextFields() {
         })
 
         console.log(mappedDiagnosisChips)
-
+       
+        // const id=localStorage.getItem('p_id')
+        
         const finalObj = {
-            "patientId": "63c14dc54b81b2ecc3790caf",
+            "patientId": patientId,
             "symptoms": symtomsChips,
             "medicines": val,
             "vitalInfo": {
@@ -90,7 +94,7 @@ export default function MultilineTextFields() {
         }
         console.log(finalObj)
         const response = await fetch(
-            "http://localhost:5001/api/history/createHistory",
+            "http://localhost:5002/api/history/createHistory",
             
             {
                 method: "POST",
@@ -111,7 +115,7 @@ export default function MultilineTextFields() {
     return (
         <div>
             <div class="container text-center mt-2">
-                <form action="" onSubmit={handleSubmit}>
+                <form action=""  onSubmit={handleSubmit}>
                     <div class="row">
                         <div class="col">
                             <div>

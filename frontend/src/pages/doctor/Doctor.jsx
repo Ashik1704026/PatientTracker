@@ -20,7 +20,7 @@ export default function Doctor() {
   };
 
   const handleClick = async (event) => {
-    const response = await fetch(`http://localhost:5001/api/history/?patientId=${patientID.patient_id}`, {
+    const response = await fetch(`http://localhost:5002/api/history/?patientId=${patientID.patient_id}`, {
        method: 'GET',
        headers: {
          'Content-Type': 'application/json',
