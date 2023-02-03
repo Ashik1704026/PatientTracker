@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Topbar from "../topbar/Topbar";
+import DoctorTopbar from "../topbar/DoctorTopbar";
 import "./doctor.css";
 import Footer from "../footer/Footer";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -41,7 +41,8 @@ export default function Doctor() {
     <>
       <body>
         <header className="bg_image">
-          <Topbar />
+          <DoctorTopbar/>
+          {/* <Topbar/> */}
           <div className="container " style={{ marginTop: "100px" }}>
             <div
               className="carddoc card"

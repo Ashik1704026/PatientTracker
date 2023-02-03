@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Footer from "../footer/Footer";
-import Topbar from "../topbar/Topbar";
+import DoctorTopbar from "../topbar/DoctorTopbar";
 import { useState } from "react";
 import { useSearchParams, useParams, Link } from "react-router-dom";
 import "./patient.css";
@@ -41,7 +41,7 @@ export default function Patient() {
       <>
         <body>
           <header className="bg_image">
-            <Topbar />
+            <DoctorTopbar />
             <div className="container" style={{ marginTop: "100px" }}>
               <div
                 className="carddoc card"
