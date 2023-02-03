@@ -1,4 +1,7 @@
 import * as React from 'react';
+import Footer from "../footer/Footer";
+import Topbar from "../topbar/Topbar";
+import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import { MuiChipsInput } from 'mui-chips-input'
 import { useParams } from "react-router-dom";
@@ -112,6 +115,11 @@ export default function MultilineTextFields() {
 
 
     return (
+        <>
+        <body>
+        <Topbar/>
+        <header class="bgimage">
+        </header>
         <div className='container my-5'>
             <div className="text-center mt-2">
                 <form action="" onSubmit={handleSubmit}>
@@ -254,6 +262,10 @@ export default function MultilineTextFields() {
             </div>
 
         </div>
-
+        
+        
+        <Footer/>
+        </body>
+        </>
     );
 }
