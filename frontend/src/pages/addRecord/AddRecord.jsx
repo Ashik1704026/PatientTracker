@@ -79,8 +79,10 @@ export default function MultilineTextFields() {
         console.log(mappedDiagnosisChips)
        
         // const id=localStorage.getItem('p_id')
+        const doctorId = localStorage.getItem('token');
         
         const finalObj = {
+            "doctorId" : doctorId,
             "patientId": patientId,
             "symptoms": symtomsChips,
             "medicines": val,
