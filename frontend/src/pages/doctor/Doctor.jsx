@@ -114,6 +114,7 @@ export default function Doctor() {
                 <div className="search">
                   <i className="fa fa-search"></i>
                   <input
+                    id = "patientIDform"
                     value={patientID.id}
                     type="text"
                     className="form-control"

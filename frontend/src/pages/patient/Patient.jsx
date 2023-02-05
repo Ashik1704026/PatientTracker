@@ -53,7 +53,7 @@ export default function Patient() {
                 <div className="row">
                   <div className="col-md-2 text-center">
                     <Link to={`/addrecord/${patientId}`}>
-                      <button style={{ marginTop: "50%" }}><i className="fa-solid fa-user-plus" ></i> New Record </button></Link>
+                      <button id = "newRecordButton" style={{ marginTop: "50%" }}><i className="fa-solid fa-user-plus" ></i> New Record </button></Link>
                   </div>
                   <div className="col-md-4 mt-5">
                     <h5 className="mx-5 my-3">
