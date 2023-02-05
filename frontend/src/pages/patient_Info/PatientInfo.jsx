@@ -22,7 +22,7 @@ export default function PatientInfo() {
   
     const apiCall = async () => {
       const response = await fetch(
-        `http://localhost:5001/api/history/?patientId=${patientId}`,
+        `http://localhost:5002/api/history/?patientId=${patientId}`,
         {
           method: "GET",
           headers: {

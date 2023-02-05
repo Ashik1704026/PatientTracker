@@ -36,12 +36,13 @@ export default function Doctor() {
     }
    
   };
+  localStorage.setItem("doctorname",location.state.data.user.name)
 
   return (
     <>
       <body>
         <header className="bg_image">
-          <DoctorTopbar/>
+          <DoctorTopbar docname={location.state.data.user.name}/>
           {/* <Topbar/> */}
           <div className="container " style={{ marginTop: "100px" }}>
             <div

@@ -15,7 +15,7 @@ export default function Patientlogin() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await fetch(
-      "http://localhost:5000/api/auth/patient/login",
+      "http://localhost:5002/api/auth/patient/login",
       {
         method: "POST",
         headers: {
