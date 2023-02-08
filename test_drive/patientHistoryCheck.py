@@ -30,8 +30,8 @@ sleep(3)
 try:
     if(driver.find_element(By.ID, "newRecordButton").is_displayed()):
 
-        print("Test Passed!")
+        print("Test 2 Passed!")
 except:
-    print("Test Failed :(")
+    print("Test 2 Failed :(")
 
 driver.close()

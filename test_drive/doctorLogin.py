@@ -24,7 +24,7 @@ sleep(3)
 try:
     if(driver.find_element(By.ID, "doctorLogout").is_displayed()):
 
-        print("Login successful!")
+        print("Test 1 success!")
 except:
-    print("Unsuccessful Login :(")
+    print("Test 1 failed")
 driver.close()
