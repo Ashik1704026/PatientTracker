@@ -36,7 +36,7 @@ exports.signup = async(req, res, next) => {
 exports.login = async (req, res, next) =>{
     // res.send("hello, i am from log in");
 
-    let success = False;
+    let success = false;
     const {email, password} = req.body;
     try {
         const user = await LabTechnitian.findOne({email});
@@ -56,7 +56,7 @@ exports.login = async (req, res, next) =>{
         }
         
         const token = jwt.sign({email, _id: user._id}, process.env.PRIVATE_KEY);
-        success = True;
+        success = true;
 
         res.status(200).json({
             message : "login successful",
