@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Footer from "../footer/Footer";
-import Topbar from "../topbar/Topbar";
+// import Topbar from "../topbar/Topbar";
+import DoctorTopbar from "../topbar/DoctorTopbar";
 import { useState } from "react";
 import { useSearchParams, useParams } from "react-router-dom";
 import "./patient_info.css";
@@ -39,15 +40,16 @@ export default function PatientInfo() {
     useEffect(() => {
       apiCall();
     }, [patientId]);
-  
-    // console.log(patientPayload);
+    localStorage.setItem("patientname",patientPayload.patientInfo.name);
+    const name=localStorage.getItem("patientname");
+    
   
     return (
       <div>
         <>
           <body>
             <header className="bg_image">
-              <Topbar />
+              <DoctorTopbar docname="jkdskg"/>
               <div className="container" style={{ marginTop: "100px" }}>
                 <div
                   className="carddoc card"

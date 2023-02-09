@@ -43,7 +43,6 @@ export default function Doctor() {
       <body>
         <header className="bg_image">
           <DoctorTopbar docname={location.state.data.user.name}/>
-          {/* <Topbar/> */}
           <div className="container " style={{ marginTop: "100px" }}>
             <div
               className="carddoc card"

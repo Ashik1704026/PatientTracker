@@ -29,12 +29,14 @@ export default function Patient() {
     );
     const json = await response.json();
     setPayload(json);
-    console.log(json)
   };
 
   useEffect(() => {
     apiCall();
   }, [patientId]);
+  localStorage.setItem("patientname",patientPayload.patientInfo.name);
+  // const name=localStorage.getItem("patientname");
+  // console.log(name)
 
   return (
     <div>

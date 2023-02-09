@@ -5,6 +5,7 @@ import Topbar from "../topbar/Topbar";
 import Footer from "../footer/Footer";
 import logimg from "../../assets/patient_login.jpg";
 import "./patientlogin.css";
+import DoctorTopbar from "../topbar/DoctorTopbar";
 
 
 export default function Patientlogin() {

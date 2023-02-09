@@ -8,6 +8,8 @@ import Imagemodal from "./pages/Imagemodal";
 import Demo from "./pages/Demo";
 import AddRecord from "./pages/addRecord/AddRecord";
 import PatientInfo from "./pages/patient_Info/PatientInfo";
+import Labtec from "./pages/labtecLogin/Labtec";
+import LabTechnitian from "./pages/labtech/LabTechnitian";
 
 export default function Routes() {
   // const [alert,setAlert]=useState(null);
@@ -26,7 +28,9 @@ export default function Routes() {
       <Route path="/" element={<Home />} />
       <Route path="/doctorlogin" element={<Doctorlogin/>}/>
       <Route path="/patientlogin" element={<Patientlogin/>}/>
+      <Route path="/labteclogin" element={<Labtec/>}/>
       <Route path="/doctor" element={<Doctor/>}/>
+      <Route path="/labtechnitian" element={<LabTechnitian/>}/>
       <Route path="/patient/:patientId" element={<Patient/>}/>
       <Route path="/patientinfo/:patientId" element={<PatientInfo/>}/>
 
