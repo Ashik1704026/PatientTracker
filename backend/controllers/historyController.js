@@ -5,6 +5,7 @@ const Reference = require("../models/referenceModel");
 const Histories = require("../models/historyModel");
 const Doctor = require("../models/doctorModel");
 const Patient = require("../models/patientModel");
+const { findOne, findOneAndUpdate } = require("../models/symptomsModel");
 const  ObjectId = require('mongodb').ObjectId;
 
 
@@ -111,6 +112,24 @@ exports.getPatientHistory = async(req, res, next) =>{
 };
 
 
+exports.getDiagnosisHistory = async(req, res) => {
+
+    try {
+        const DiagnosisHistory = await Histories.find({"diagnosis.done": {$eq: 0}}, {"diagnosis.name" : 1, referenceId : 1, _id : 0}); 
+        res.status(200).json({
+            message: "Successfully get Diagnosis History",
+            DiagnosisHistory
+        });
+    } catch (error) {
+        res.status(400).json({
+            message: "Diagnosis History Error",
+            error
+        })
+    }
+
+};
+
+
 
 
 exports.createPatientHistory = async(req, res) => {
@@ -150,6 +169,24 @@ exports.createPatientHistory = async(req, res) => {
     } catch (error) {
         res.status(400).json({
             message: "Something went wrong to create history",
+            error,
+        })
+    }
+};
+
+
+exports.updateDiagnosis = async (req, res) => {
+    const {referenceId} = req.query;
+    try {
+        const update = await Histories.findOneAndUpdate(
+            {referenceId : referenceId},
+            {
+
+            }
+        );
+    } catch (error) {
+        res.status(400).json({
+            message: "Something went wrong to update diagnosis value",
             error,
         })
     }

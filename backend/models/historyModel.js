@@ -58,6 +58,11 @@ const historySchema = new mongoose.Schema({
             type : Array,
             trim : true,
             default : "avatar.png"
+        },
+        done : {
+            type : Number,
+            trim : true,
+            default : 0
         }
     }],
     vitalInfo : {
