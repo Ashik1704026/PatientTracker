@@ -2,12 +2,12 @@ import React from "react";
 import "./topbar.css";
 import { useNavigate} from "react-router-dom";
 
-export default function DoctorTopbar(props) {
-    const name=localStorage.getItem('doctorname')
+export default function PatientTopbar() {
+    const name=localStorage.getItem('patientname')
+    console.log(name)
     const navigate = useNavigate();
     const handleLogout=()=>{
         localStorage.removeItem('patienttoken');
-        localStorage.removeItem('doctorname');
         navigate('/');
         
     }
@@ -21,7 +21,7 @@ export default function DoctorTopbar(props) {
         
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-          {!localStorage.getItem('token')?
+          {!localStorage.getItem('patienttoken')?
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/">
@@ -41,5 +41,6 @@ export default function DoctorTopbar(props) {
       </div>
     </nav>
   </div>
+
   )
 }
