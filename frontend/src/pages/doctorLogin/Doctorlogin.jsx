@@ -43,7 +43,7 @@ export default function Doctorlogin(props) {
       }
     );
     const json = await response.json();
-    console.log(json);
+    // console.log(json);
     if (json.success) {
       localStorage.setItem("token", json.token);
       history("/doctor", { state: { data: json } });

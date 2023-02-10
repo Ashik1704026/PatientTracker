@@ -9,7 +9,7 @@ import docimg from "../../assets/doctor_avatar.jpg"
 export default function Doctor() {
   // const a=useContext(doctorContext)
   const location = useLocation();
-  console.log(location.state.data.user.name)
+ 
   const [patientID, setPatientID] = useState({ patient_id: "", payload: null });
   const [data, setdata] = useState({});
   const [jsonData, setjsonData] = useState({ json: "" });

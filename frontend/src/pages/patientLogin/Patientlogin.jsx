@@ -29,7 +29,9 @@ export default function Patientlogin() {
       }
     );
     const json = await response.json();
+    
     if (json.success) {
+      localStorage.setItem("patienttoken", json.token);
       navigate(`/patientinfo/${json.patientId}`);
     } 
   };
