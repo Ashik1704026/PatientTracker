@@ -115,7 +115,7 @@ exports.getPatientHistory = async(req, res, next) =>{
 exports.getDiagnosisHistory = async(req, res) => {
 
     try {
-        const DiagnosisHistory = await Histories.find({"diagnosis.done": {$eq: 0}}, {"diagnosis.name" : 1, referenceId : 1, _id : 0}); 
+        const DiagnosisHistory = await Histories.find({"diagnosis.done": {$eq: 0}}, {"diagnosis.name" : 1, referenceId : 1, "diagnosis._id" : 1, _id : 0}); 
         res.status(200).json({
             message: "Successfully get Diagnosis History",
             DiagnosisHistory
@@ -176,12 +176,13 @@ exports.createPatientHistory = async(req, res) => {
 
 
 exports.updateDiagnosis = async (req, res) => {
-    const {referenceId} = req.query;
+    const {diag_id} = req.query;
     try {
+        const {result, resultDoc, done} = req.body;
         const update = await Histories.findOneAndUpdate(
-            {referenceId : referenceId},
+            {"diagnosis._id" : diag_id},
             {
-
+                "diagnosis.result" : result
             }
         );
     } catch (error) {
