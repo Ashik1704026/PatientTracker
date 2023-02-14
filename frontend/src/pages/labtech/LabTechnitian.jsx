@@ -5,9 +5,13 @@ import logimg from "../../assets/patient_login.jpg";
 import { useState } from "react";
 import LabTechinitianTopbar from "../topbar/LabTechinitianTopbar";
 
+let flag = true;
+let ind = 0;
+
 export default function LabTechnitian() {
   const [tecPayload, setPayload] = useState();
   const [disable, setDisable] = React.useState(false);
+  // flag = true;
   const apiCall = async () => {
     const response = await fetch(
       `http://localhost:5002/api/history/diagnosis`,
@@ -22,9 +26,16 @@ export default function LabTechnitian() {
     const json = await response.json();
     setPayload(json);
     console.log(json);
+    if(json){
+      console.log("hiiiiii");
+      flag = false;
+    }
     // setPayload(json);
   };
-  apiCall();
+
+  if(flag){
+    apiCall();
+  }
 
   return (
     <div>
@@ -32,8 +43,11 @@ export default function LabTechnitian() {
       <body className="bg_img_log opacity-75">
         <div className="container " style={{ marginTop: "100px" }}>
           {tecPayload != null
-            ? tecPayload.DiagnosisHistory.map((val) => (
+            ? tecPayload.DiagnosisHistory.map((val, index1) => (
                 // <p>{val.referenceId}</p>
+
+              
+
 
                 <div
                   className="carddoc card"
@@ -51,10 +65,11 @@ export default function LabTechnitian() {
 
                     <div className="col-md-10 mt-5">
                       <div className="row">
-                        {val.diagnosis.map((val2) => (
+                        {val.diagnosis.map((val2, index2) => (
                           <form class="row g-3">
                             <div className="col-md-2">
                               <h5>{val2.name}:</h5>
+                              <h5> {index2}</h5>
                             </div>
                             <div className="col-md-4">
                               <input
@@ -67,7 +82,7 @@ export default function LabTechnitian() {
                               <input class="form-control" type="file"></input>
                             </div>
                             <div className="col-md-2">
-                              <button disabled={disable} onClick={() => setDisable(true)}>
+                              <button key={index2} disabled={disable} onClick={() => setDisable(true)}>
                                 Click me!
                               </button>
                             </div>
