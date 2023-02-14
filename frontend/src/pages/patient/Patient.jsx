@@ -34,7 +34,7 @@ export default function Patient() {
   useEffect(() => {
     apiCall();
   }, [patientId]);
-  localStorage.setItem("patientname",patientPayload.patientInfo.name);
+  // localStorage.setItem("patientname",patientPayload.patientInfo.name);
   // const name=localStorage.getItem("patientname");
   // console.log(name)
 
