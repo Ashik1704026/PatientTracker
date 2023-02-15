@@ -69,7 +69,6 @@ export default function LabTechnitian() {
                           <form class="row g-3">
                             <div className="col-md-2">
                               <h5>{val2.name}:</h5>
-                              <h5> {index2}</h5>
                             </div>
                             <div className="col-md-4">
                               <input
@@ -83,7 +82,7 @@ export default function LabTechnitian() {
                             </div>
                             <div className="col-md-2">
                               <button key={index2} disabled={disable} onClick={() => setDisable(true)}>
-                                Click me!
+                                Submit
                               </button>
                             </div>
                           </form>
