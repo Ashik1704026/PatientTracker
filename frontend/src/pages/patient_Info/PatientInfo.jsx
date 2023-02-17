@@ -65,19 +65,19 @@ export default function PatientInfo() {
                   <div className="row">
                     <div className="col-md-5 mt-5">
                       <h5 className="mx-5 my-3">
-                        Id:{" "}
+                        Id : {" "}
                         {patientPayload != null
                           ? patientPayload.patientInfo._id
                           : ""}{" "}
                       </h5>
                       <h5 className="mx-5 my-3">
-                        Name:{" "}
+                        Name : {" "}
                         {patientPayload != null
                           ? patientPayload.patientInfo.name
                           : ""}{" "}
                       </h5>
                       <h5 className="mx-5 my-3">
-                        Gender:{" "}
+                        Gender : {" "}
                         {patientPayload != null
                           ? patientPayload.patientInfo.gender
                           : ""}{" "}
@@ -86,19 +86,19 @@ export default function PatientInfo() {
   
                     <div className="col-md-5 d-none d-lg-block mt-5">
                       <h5 className="mx-5 my-3">
-                        Address:
+                        Address :
                         {patientPayload != null
                           ? patientPayload.patientInfo.address
                           : ""}
                       </h5>
                       <h5 className="mx-5 my-3">
-                        Email:
+                        Email :
                         {patientPayload != null
                           ? patientPayload.patientInfo.email
                           : ""}
                       </h5>
                       <h5 className="mx-5 my-3">
-                        Phone:
+                        Phone :
                         {patientPayload != null
                           ? patientPayload.patientInfo.phone
                           : ""}
@@ -168,22 +168,22 @@ export default function PatientInfo() {
                                 <ul className="dropdown-menu">
                                   <li>
                                     <a className="dropdown-item" href="#">
-                                      Name:{val3.name}
+                                      Name : {val3.name}
                                     </a>
                                   </li>
                                   <li>
                                     <a className="dropdown-item" href="#">
-                                      Days:{val3.days}
+                                      Days : {val3.days}
                                     </a>
                                   </li>
                                   <li>
                                     <a className="dropdown-item" href="#">
-                                      Time:{val3.time}
+                                      Time : {val3.time}
                                     </a>
                                   </li>
                                   <li>
                                     <a className="dropdown-item" href="#">
-                                      Direction:{val3.direction}
+                                      Direction : {val3.direction}
                                     </a>
                                   </li>
                                 </ul>
@@ -212,17 +212,17 @@ export default function PatientInfo() {
                                 >
                                   <li>
                                     <a className="dropdown-item" href="#">
-                                      Name:{val3.name}
+                                      Name : {val3.name}
                                     </a>
                                   </li>
                                   <li>
                                     <a className="dropdown-item" href="#">
-                                      Result:{val3.result}
+                                      Result : {val3.result}
                                     </a>
                                   </li>
                                   <li>
                                     <a className="dropdown-item" href="#">
-                                      ResultDocumet
+                                      Result Document
                                     </a>
                                     <ul className="dropdown-item dropdown-submenu">
                                       {val3.resultDoc.map((val4) =>(
@@ -241,19 +241,19 @@ export default function PatientInfo() {
   
                           <div className="col-md-2 my-2">
                             <p className="fw-bold">Info</p>
-                            <p>SugarLevel:{val.vitalInfo.sugarLevel}</p>
-                            <p>BP:{val.vitalInfo.BP}</p>
-                            <p>Height:{val.vitalInfo.height}</p>
-                            <p>Weight:{val.vitalInfo.weight}</p>
+                            <p>SugarLevel : {val.vitalInfo.sugarLevel}</p>
+                            <p>BP : {val.vitalInfo.BP}</p>
+                            <p>Height : {val.vitalInfo.height}</p>
+                            <p>Weight : {val.vitalInfo.weight}</p>
                           </div>
                           {/* /////////doctor//////// */}
   
                           <div className="col-md-2 my-2">
-                            <p className="fw-bold">Time:{val.createdAt}</p>
+                            <p className="fw-bold">Time : {val.createdAt}</p>
                             <p>Prescribed by</p>
-                            <p>Name: {val.doctorInfo.name}</p>
-                            <p>Hospital: {val.doctorInfo.hospital}</p>
-                            <p>Designation: {val.doctorInfo.designation}</p>
+                            <p>Name : {val.doctorInfo.name}</p>
+                            <p>Hospital : {val.doctorInfo.hospital}</p>
+                            <p>Designation : {val.doctorInfo.designation}</p>
                           </div>
   
                           {/* <hr /> */}

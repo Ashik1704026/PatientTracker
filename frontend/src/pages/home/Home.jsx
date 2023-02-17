@@ -32,33 +32,37 @@ export default function Home() {
         <div class="container text-center">
           <div class="row mt-5 ms-5 justify-content-center">
             <div class="col-lg-4 col-md-4 col-sm-12">
-              <div class="cardhome card " style={{ width: "15rem",backgroundColor:"#cbf5e8",height:"15rem" }}>
+              <div class="cardhome card " style={{ width: "15rem",backgroundColor:"#e0feff",height:"15rem" }}>
                 <div class="card-img">
                   <img src={doc} class="imgcard card-img-top img-fluid rounded-circle" alt="asja"/>
                 </div>
                 <div className="card-footer">
-                <a href="/doctorlogin">Doctor</a>
+                {/* <a href="/doctorlogin">Doctor</a> */}
+                <a href="/doctorlogin" class="btn btn-outline-primary" role="button" aria-pressed="true"><b>Doctor</b></a>
+                {/* <button type="button"  href="/doctorlogin" class="btn btn-outline-primary"><b>Doctor</b></button> */}
                 </div>
               </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
-              <div class="cardhome card" style={{ width: "15rem",height:"15rem", backgroundColor:"#cbf5e8"}}>
+              <div class="cardhome card" style={{ width: "15rem",height:"15rem", backgroundColor:"#e0feff"}}>
                 <div class="card-img">
                   <img src={patient}class="imgcard card-img-top img-fluid rounded-circle" alt="asja"/>
                 </div>
                 <div className="card-footer">
-                <a href="/patientlogin">Patient</a>
+                {/* <a href="/patientlogin">Patient</a> */}
+                <a href="/patientlogin" class="btn btn-outline-primary" role="button" aria-pressed="true"><b>Patient</b></a>
                 </div>
               </div>
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12">
-              <div class="cardhome card " style={{ width: "15rem",height:"15rem",backgroundColor:"#cbf5e8" }}>
+              <div class="cardhome card " style={{ width: "15rem",height:"15rem",backgroundColor:"#e0feff" }}>
                 <div class="card-img">
                   <img src={lab}class="imgcard card-img-top img-fluid rounded-circle" alt="asja"/>
                 </div>
                 <div className="card-footer">
-                <a href="/labteclogin">Lab</a>
+                {/* <a href="/labteclogin">Lab</a> */}
+                <a href="/labteclogin" class="btn btn-outline-primary" role="button" aria-pressed="true"><b>LabTech</b></a>
                 </div>
               </div>
             </div>
