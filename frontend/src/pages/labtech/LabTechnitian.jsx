@@ -45,10 +45,6 @@ export default function LabTechnitian() {
           {tecPayload != null
             ? tecPayload.DiagnosisHistory.map((val, index1) => (
                 // <p>{val.referenceId}</p>
-
-              
-
-
                 <div
                   className="carddoc card"
                   style={{
