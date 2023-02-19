@@ -86,20 +86,17 @@ export default function PatientInfo() {
   
                     <div className="col-md-5 d-none d-lg-block mt-5">
                       <h5 className="mx-5 my-3">
-                        Address :
-                        {patientPayload != null
+                        Address : {patientPayload != null
                           ? patientPayload.patientInfo.address
                           : ""}
                       </h5>
                       <h5 className="mx-5 my-3">
-                        Email :
-                        {patientPayload != null
+                        Email : {patientPayload != null
                           ? patientPayload.patientInfo.email
                           : ""}
                       </h5>
                       <h5 className="mx-5 my-3">
-                        Phone :
-                        {patientPayload != null
+                        Phone : {patientPayload != null
                           ? patientPayload.patientInfo.phone
                           : ""}
                       </h5>
