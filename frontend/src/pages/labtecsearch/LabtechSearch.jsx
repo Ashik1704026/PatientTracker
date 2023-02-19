@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import DoctorTopbar from "../topbar/DoctorTopbar";
-import "./doctor.css";
+import "./labtechsearch.css";
 import Footer from "../footer/Footer";
 import { useNavigate, useLocation } from "react-router-dom";
 // import docimg from `../../assets/${location.state.data.user.profile}`;
@@ -8,6 +8,7 @@ import docimg from "../../assets/doctor_avatar.jpg"
 
 export default function LabtechSearch() {
     const location = useLocation();
+    console.log(location.state.data)
     const [patientID, setPatientID] = useState({ patient_id: "", payload: null });
     const [data, setdata] = useState({});
     const [jsonData, setjsonData] = useState({ json: "" });
@@ -30,7 +31,7 @@ export default function LabtechSearch() {
         // setPatientID({...patientID,payload:json},console.log("saved"))
         // history.push(`/patient/${patientID.patient_id}`);
         if(json.flag){
-          navigate(`/patient/${patientID.patient_id}`);
+          navigate(`/labtechnitian/${patientID.patient_id}`);
         }
        
       };
@@ -55,17 +56,6 @@ export default function LabtechSearch() {
                     <b>   {location.state.data.user.designation}</b>
                   </h5>
 
-                  <span
-                    className="ml-5 my-2 doc_in"
-                    style={{ fontSize: "20px" }}
-                  >
-                    <b>Specialization: </b>
-                  </span>
-                  {location.state.data.user.specialization.map((val) => (
-                    <span className="mx-1" style={{ fontSize: "20px" }}>
-                      {val}
-                    </span>
-                  ))}
                   <h5 className="mx-5 my-2">
                     Worked at: {location.state.data.user.hospital}
                   </h5>

@@ -31,7 +31,7 @@ export default function Labtec() {
       if (json.success) 
       {
         localStorage.setItem("labtoken",json.token);
-        navigate(`/labtechnitian`,{ state: { data: json } });
+        navigate(`/labtechnitiansearch`,{ state: { data: json } });
       } 
     };
   
