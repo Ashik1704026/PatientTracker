@@ -28,9 +28,10 @@ export default function Labtec() {
       );
       const json = await response.json();
       // console.log(json)
-      if (json.success) {
+      if (json.success) 
+      {
         localStorage.setItem("labtoken",json.token);
-        navigate(`/labtechnitian`);
+        navigate(`/labtechnitiansearch`,{ state: { data: json } });
       } 
     };
   

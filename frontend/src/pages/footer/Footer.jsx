@@ -15,7 +15,7 @@ export default function Footer() {
             <p>Department of CSE</p>
             <p>Chittagong University of Engineering and Technology</p>
             <p>Chattagoram-4349, Bangladesh</p>
-            <a class="text-dark" href="https://mdbootstrap.com/">© 2023 Copyright:PTS.com</a>
+            <a class="text-dark" href="http://localhost:3000/">© 2023 Copyright:PTS.com</a>
           </div>
           <div className="col-md-4">
           
