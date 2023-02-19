@@ -12,10 +12,10 @@ export default function Footer() {
             <p>Ashiqur Rahman</p>
           </div>
           <div className="col-md-4">
-            <p>Department of cse</p>
-            <p>Chittagong university of Engineering and Technology</p>
-            <p>Chattagoram-4349,Bangladesh</p>
-            <a class="text-dark" href="https://mdbootstrap.com/">© 2020 Copyright:PTS.com</a>
+            <p>Department of CSE</p>
+            <p>Chittagong University of Engineering and Technology</p>
+            <p>Chattagoram-4349, Bangladesh</p>
+            <a class="text-dark" href="https://mdbootstrap.com/">© 2023 Copyright:PTS.com</a>
           </div>
           <div className="col-md-4">
           
