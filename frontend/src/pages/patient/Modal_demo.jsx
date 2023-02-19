@@ -18,7 +18,7 @@ export default function Modal_demo(props)
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Test Report (image)</Modal.Title>
         </Modal.Header>
         <Modal.Body className="text-center" >
         <img className="modal_img img-fluid" src={require(`../../assets/${d}`)} alt='img' />

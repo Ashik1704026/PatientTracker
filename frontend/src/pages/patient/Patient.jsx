@@ -59,19 +59,19 @@ export default function Patient() {
                   </div>
                   <div className="col-md-4 mt-5">
                     <h5 className="mx-5 my-3">
-                      Id:{" "}
+                      Id : {" "}
                       {patientPayload != null
                         ? patientPayload.patientInfo._id
                         : ""}{" "}
                     </h5>
                     <h5 className="mx-5 my-3">
-                      Name:{" "}
+                      Name : {" "}
                       {patientPayload != null
                         ? patientPayload.patientInfo.name
                         : ""}{" "}
                     </h5>
                     <h5 className="mx-5 my-3">
-                      Gender:{" "}
+                      Gender : {" "}
                       {patientPayload != null
                         ? patientPayload.patientInfo.gender
                         : ""}{" "}
@@ -80,19 +80,19 @@ export default function Patient() {
 
                   <div className="col-md-4 d-none d-lg-block mt-5">
                     <h5 className="mx-5 my-3">
-                      Address:
+                      Address :
                       {patientPayload != null
                         ? patientPayload.patientInfo.address
                         : ""}
                     </h5>
                     <h5 className="mx-5 my-3">
-                      Email:
+                      Email :
                       {patientPayload != null
                         ? patientPayload.patientInfo.email
                         : ""}
                     </h5>
                     <h5 className="mx-5 my-3">
-                      Phone:
+                      Phone :
                       {patientPayload != null
                         ? patientPayload.patientInfo.phone
                         : ""}
@@ -162,22 +162,22 @@ export default function Patient() {
                               <ul className="dropdown-menu">
                                 <li>
                                   <a className="dropdown-item" href="#">
-                                    Name:{val3.name}
+                                    Name : {val3.name}
                                   </a>
                                 </li>
                                 <li>
                                   <a className="dropdown-item" href="#">
-                                    Days:{val3.days}
+                                    Days : {val3.days}
                                   </a>
                                 </li>
                                 <li>
                                   <a className="dropdown-item" href="#">
-                                    Time:{val3.time}
+                                    Time : {val3.time}
                                   </a>
                                 </li>
                                 <li>
                                   <a className="dropdown-item" href="#">
-                                    Direction:{val3.direction}
+                                    Direction : {val3.direction}
                                   </a>
                                 </li>
                               </ul>
@@ -206,17 +206,17 @@ export default function Patient() {
                               >
                                 <li>
                                   <a className="dropdown-item" href="#">
-                                    Name:{val3.name}
+                                    Name : {val3.name}
                                   </a>
                                 </li>
                                 <li>
                                   <a className="dropdown-item" href="#">
-                                    Result:{val3.result}
+                                    Result : {val3.result}
                                   </a>
                                 </li>
                                 <li>
                                   <a className="dropdown-item" href="#">
-                                    ResultDocumet
+                                    Result Document
                                   </a>
                                   <ul className="dropdown-item dropdown-submenu">
                                     {val3.resultDoc.map((val4) =>(
