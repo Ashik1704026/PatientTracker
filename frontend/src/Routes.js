@@ -10,6 +10,7 @@ import AddRecord from "./pages/addRecord/AddRecord";
 import PatientInfo from "./pages/patient_Info/PatientInfo";
 import Labtec from "./pages/labtecLogin/Labtec";
 import LabTechnitian from "./pages/labtech/LabTechnitian";
+import LabtechSearch from "./pages/labtecsearch/LabtechSearch";
 
 export default function Routes() {
   // const [alert,setAlert]=useState(null);
@@ -30,7 +31,8 @@ export default function Routes() {
       <Route path="/patientlogin" element={<Patientlogin/>}/>
       <Route path="/labteclogin" element={<Labtec/>}/>
       <Route path="/doctor" element={<Doctor/>}/>
-      <Route path="/labtechnitian" element={<LabTechnitian/>}/>
+      <Route path="/labtechnitian/:patientId" element={<LabTechnitian/>}/>
+      <Route path="/labtechnitiansearch" element={<LabtechSearch/>}/>
       <Route path="/patient/:patientId" element={<Patient/>}/>
       <Route path="/patientinfo/:patientId" element={<PatientInfo/>}/>
 
