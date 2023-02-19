@@ -36,6 +36,24 @@ export default function LabTechnitian() {
     // setPayload(json);
   };
 
+  const handleSubmit = async (e) => {
+    const response = await fetch(
+      "http://localhost:5002/api/history/diagnosis/upload",
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: credentials.email,
+          password: credentials.password,
+        }),
+      }
+    );
+  }
+
+
+
   useEffect(() => {
     apiCall();
   }, [patientId]);
@@ -65,7 +83,7 @@ export default function LabTechnitian() {
                     <div className="col-md-10 mt-5">
                       <div className="row">
                         {val.diagnosis.map((val2, index2) => (
-                          <form class="row g-3">
+                          <form class="row g-3" onSubmit={handleSubmit}>
                             <div className="col-md-2">
                               <h5>{val2.name}:</h5>
                             </div>
@@ -80,7 +98,7 @@ export default function LabTechnitian() {
                               <input class="form-control" type="file"></input>
                             </div>
                             <div className="col-md-2">
-                              <button key={index2} disabled={disable} onClick={() => setDisable(true)}>
+                              <button key={index2} type = "submit" disabled={disable} onClick={() => setDisable(true)}>
                                 Submit
                               </button>
                             </div>

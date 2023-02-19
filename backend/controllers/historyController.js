@@ -121,7 +121,7 @@ exports.getDiagnosisHistory = async (req, res) => {
 
 
         const DiagnosisHistory = await Histories.aggregate([
-            { $match: { diagnosis: { $elemMatch: { done: 0 } }, patientId : ObjectId(patientId) } } ,
+            { $match: { diagnosis: { $elemMatch: { done: 0 } }, patientId: ObjectId(patientId) } },
             { $project: { diagnosis: { $filter: { input: "$diagnosis", cond: { $eq: ["$$this.done", 0] } } }, "referenceId": 1, } }
         ])
 
@@ -190,14 +190,19 @@ exports.createPatientHistory = async (req, res) => {
 
 exports.updateDiagnosis = async (req, res) => {
     const { diag_id } = req.query;
+    const files = req.files;
+    const textData = req.body.textData;
     try {
-        const { result, resultDoc, done } = req.body;
-        const update = await Histories.findOneAndUpdate(
-            { "diagnosis._id": diag_id },
-            {
-                "diagnosis.result": result
-            }
-        );
+        console.log(files);
+        console.log(textData);
+        // const { result, resultDoc, done } = req.body;
+        // const update = await Histories.findOneAndUpdate(
+        //     { "diagnosis._id": diag_id },
+        //     {
+        //         "diagnosis.result": result
+        //     }
+        // );
+        res.status(200).send('Files and text data received!');
     } catch (error) {
         res.status(400).json({
             message: "Something went wrong to update diagnosis value",
