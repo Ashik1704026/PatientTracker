@@ -2,7 +2,8 @@ import React from "react";
 import Footer from "../footer/Footer";
 import Topbar from "../topbar/Topbar";
 import logimg from "../../assets/patient_login.jpg";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { useSearchParams, useParams, Link } from "react-router-dom";
 import LabTechinitianTopbar from "../topbar/LabTechinitianTopbar";
 
 let flag = true;
@@ -11,10 +12,12 @@ let ind = 0;
 export default function LabTechnitian() {
   const [tecPayload, setPayload] = useState();
   const [disable, setDisable] = React.useState(false);
+  const { patientId } = useParams();
+  console.log(patientId)
   // flag = true;
   const apiCall = async () => {
     const response = await fetch(
-      `http://localhost:5002/api/history/diagnosis`,
+      `http://localhost:5002/api/history/diagnosis/?patientId=${patientId}`,
       {
         method: "GET",
         headers: {
@@ -33,9 +36,9 @@ export default function LabTechnitian() {
     // setPayload(json);
   };
 
-  if(flag){
+  useEffect(() => {
     apiCall();
-  }
+  }, [patientId]);
 
   return (
     <div>
